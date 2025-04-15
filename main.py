@@ -26,10 +26,19 @@ if user_choice.lower() == "stop":
 while user_choice.lower() != "stop":
     if user_choice.lower() == "info":
         user_input = input("We need to know some information about you before we continue. Please write 'Yes' if you"
-                           "\nwould like to continue. Otherwise, write 'No' and log out!")
-        if user_input.lower() == "yes":
-            user_age = int(input("How old are you?"))
-            if user_age >= 7 or  user_age <= 19:
+                           "\nwould like to continue. Otherwise, write 'No' and log out!\n")
+        s_flag = False
+        while s_flag is False:
+            if user_input.lower() == "yes":
+                user_age = int(input("How old are you? "))
+                if user_age >= 7 or user_age <= 19:
+                    print("Ok, this is one of the best times to start playing this sport!")
+                elif user_age < 6:
+                    print("You are very young to be using this app! Assuming your parents are controlling this account, you\n"
+                        "will still be able to use the app features.")
+                else:
+                    print("You are starting this sports journey pretty late. However, here we do not give up in our clients!\n"
+                        "We will make you become one of the best at this sport!")
 
 
 
