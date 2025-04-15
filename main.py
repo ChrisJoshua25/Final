@@ -19,13 +19,19 @@ def athletic_options():
 user_choice = athletic_options()
 
 if user_choice.lower() == "stop":
-    print("You have successfully logged out of your session! Sadly, your account is terminated becuase you \n"
+    print("You have successfully logged out of your session! Sadly, your account is terminated because you \n"
           "should never have logged out in the first place! Ok, bye bye.")
     exit()
 
 while user_choice.lower() != "stop":
     if user_choice.lower() == "info":
-        user_input = input()
+        user_input = input("We need to know some information about you before we continue. Please write 'Yes' if you"
+                           "\nwould like to continue. Otherwise, write 'No' and log out!")
+        if user_input.lower() == "yes":
+            user_age = int(input("How old are you?"))
+            if user_age >= 7 or  user_age <= 19:
+
+
 
 # First Tab (Survey)
 
