@@ -8,4 +8,4 @@ class Management:
         self.weight = weight
 
     def __str__(self):
-        return f"Personal Info: Age- {self.age}\n, Height- {self.height}\n, Athletic_Ability- {self.athletic_ability}\n, Weight- {self.weight}"
+        return f"Personal_Info: Age- {self.age}\n, Height- {self.height}\n, Athletic_Ability- {self.athletic_ability}\n, Weight- {self.weight}"

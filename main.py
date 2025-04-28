@@ -1,3 +1,9 @@
+import management as m
+
+from management import Management
+
+management_archive = []
+management = m.Management("", "", "", "")
 import user
 # import tkinter as tk
 #
@@ -31,7 +37,7 @@ while user_choice.lower() != "stop":
         while s_flag is False:
             if user_input.lower() == "yes":
                 user_age = int(input("How old are you? "))
-                if user_age >= 7 or user_age <= 19:
+                if user_age >= 7:
                     print("Ok, this is one of the best times to start playing this sport!")
                 elif user_age < 6:
                     print("You are very young to be using this app! Assuming your parents are controlling this account, you\n"
@@ -39,7 +45,26 @@ while user_choice.lower() != "stop":
                 else:
                     print("You are starting this sports journey pretty late. However, here we do not give up in our clients!\n"
                         "We will make you become one of the best at this sport!")
+            elif user_input.lower() == "no":
+                exit()
+            s_flag = True
 
+            user_height = int(input("How tall are you (in inches)?\n"))
+        s_flag = False
+        while s_flag is False:
+            if user_height >= 60 or user_height <= 61:
+                print("Ok, thank you")
+                s_flag = True
+
+            user_athletic = int(input("From a scale of 1-10, what would you rate your athletic ability?\n"))
+        s_flag = False
+        while s_flag is False:
+            if user_athletic <= 5:
+                print("You shouldn't rate yourself so low!... but thank you for your honesty.")
+            elif user_athletic > 5:
+                print("Ok, you seem to be decent in your sport, let's see if we can make you better!")
+            s_flag = True
+            print(Management)
 
 
 # First Tab (Survey)
