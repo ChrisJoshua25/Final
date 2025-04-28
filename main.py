@@ -67,6 +67,7 @@ while user_choice.lower() != "stop":
             print(Management)
 
 
+
 # First Tab (Survey)
 
 # entry_cats = ['First Name: ', 'Last Name: ']
