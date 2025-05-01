@@ -8,7 +8,7 @@ import user
 # import tkinter as tk
 #
 # window = tk.Tk()
-print("Welcome to the best app for atheltic improvement! Please fill out the needed information to continue.")
+print("Welcome to the best app for athletic improvement! Please fill out the needed information to continue.")
 
 def athletic_options():
     user_choice = input("""
@@ -22,20 +22,20 @@ def athletic_options():
     return user_choice
 
 
-user_choice = athletic_options()
+user_input = athletic_options()
 
-if user_choice.lower() == "stop":
+if user_input.lower() == "stop":
     print("You have successfully logged out of your session! Sadly, your account is terminated because you \n"
           "should never have logged out in the first place! Ok, bye bye.")
     exit()
 
-while user_choice.lower() != "stop":
-    if user_choice.lower() == "info":
-        user_input = input("We need to know some information about you before we continue. Please write 'Yes' if you"
+while user_input.lower() != "stop":
+    if user_input.lower() == "info":
+        user_info = input("We need to know some information about you before we continue. Please write 'Yes' if you"
                            "\nwould like to continue. Otherwise, write 'No' and log out!\n")
         s_flag = False
         while s_flag is False:
-            if user_input.lower() == "yes":
+            if user_info.lower() == "yes":
                 user_age = int(input("How old are you? "))
                 if user_age >= 7:
                     print("Ok, this is one of the best times to start playing this sport!")
@@ -50,23 +50,35 @@ while user_choice.lower() != "stop":
             s_flag = True
 
             user_height = int(input("How tall are you (in inches)?\n"))
-        s_flag = False
-        while s_flag is False:
             if user_height >= 60 or user_height <= 61:
                 print("Ok, thank you")
                 s_flag = True
 
             user_athletic = int(input("From a scale of 1-10, what would you rate your athletic ability?\n"))
-        s_flag = False
-        while s_flag is False:
             if user_athletic <= 5:
                 print("You shouldn't rate yourself so low!... but thank you for your honesty.")
             elif user_athletic > 5:
                 print("Ok, you seem to be decent in your sport, let's see if we can make you better!")
             s_flag = True
-            print(Management)
+            print(management)
+            user_input = athletic_options()
 
-
+    elif user_input.lower() == "general":
+        user_general = input("You have now opened the General Tab! Here we provide you with videos to improve in your "
+                               "sport in all areas.\n These include Dribbling, Defending, Shooting, Passing, and Speed.\n"
+                               "Would you like to proceed?")
+        s_flag = False
+        while s_flag is False:
+            if user_general.lower() == "yes":
+                print("Dribbling: (INSERT THE LINK)\n"
+                        "Defending: (INSERT THE LINK)\n"
+                        "Shooting: (INSERT THE LINK)\n"
+                        "Passing: (INSERT THE LINK)\n"
+                        "Speed: (INSERT THE LINK)\n")
+                s_flag = True
+            elif user_general.lower() == "no":
+                s_flag = True
+                user_input = athletic_options()
 
 # First Tab (Survey)
 

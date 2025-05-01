@@ -9,4 +9,4 @@ class Management:
 
 
     def __str__(self):
-        return f"Personal_Info: Age- {self.age}\n, Height- {self.height}\n, Athletic_Ability- {self.athletic_ability}\n, Weight- {self.weight}"
+        return f"Personal_Info: Age- \n{self.age}\n, Height- {self.height}\n, Athletic_Ability- {self.athletic_ability}\n, Weight- {self.weight}"
