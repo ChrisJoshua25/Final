@@ -31,10 +31,16 @@ if user_input.lower() == "stop":
 
 while user_input.lower() != "stop":
     if user_input.lower() == "info":
-        user_info = input("We need to know some information about you before we continue. Please write 'Yes' if you"
-                           "\nwould like to continue. Otherwise, write 'No' and log out!\n")
+        user_info = input("We would like to know some information about you before we continue (It is used to determine "
+                          "\nyour position + helps us learn more about our users). Please write 'Yes' if you"
+                           "\nwould like to continue and 'No' to go back to the home page. Write 'Exit' if you would like to logout.\n")
         s_flag = False
         while s_flag is False:
+            if user_info.lower() == "exit":
+                exit()
+            s_flag = True
+            if user_info.lower() == "no":
+                s_flag = True
             if user_info.lower() == "yes":
                 user_age = int(input("How old are you? "))
                 if user_age >= 7:
@@ -45,23 +51,21 @@ while user_input.lower() != "stop":
                 else:
                     print("You are starting this sports journey pretty late. However, here we do not give up in our clients!\n"
                         "We will make you become one of the best at this sport!")
-            elif user_input.lower() == "no":
-                exit()
-            s_flag = True
 
-            user_height = int(input("How tall are you (in inches)?\n"))
-            if user_height >= 60 or user_height <= 61:
-                print("Ok, thank you")
+                user_height = int(input("How tall are you (in inches)?\n"))
+                if user_height >= 60 or user_height <= 61:
+                    print("Ok, thank you")
+                    s_flag = True
+
+                user_athletic = int(input("From a scale of 1-10, what would you rate your athletic ability?\n"))
+                if user_athletic <= 5:
+                    print("You shouldn't rate yourself so low!... but thank you for your honesty.")
+                elif user_athletic > 5:
+                    print("Ok, you seem to be decent in your sport, let's see if we can make you better!")
                 s_flag = True
-
-            user_athletic = int(input("From a scale of 1-10, what would you rate your athletic ability?\n"))
-            if user_athletic <= 5:
-                print("You shouldn't rate yourself so low!... but thank you for your honesty.")
-            elif user_athletic > 5:
-                print("Ok, you seem to be decent in your sport, let's see if we can make you better!")
-            s_flag = True
-            print(management)
+                print(management)
             user_input = athletic_options()
+
 
     elif user_input.lower() == "general":
         user_general = input("You have now opened the General Tab! Here we provide you with videos to improve in your "
@@ -78,7 +82,16 @@ while user_input.lower() != "stop":
                 s_flag = True
             elif user_general.lower() == "no":
                 s_flag = True
-                user_input = athletic_options()
+            user_input = athletic_options()
+
+    elif user_input.lower() == "position":
+        user_position = input("Please tell us the position you would like to play! (PLEASE USE THE ABBREVIATION FOR THE POSITION):\n")
+        s_flag = False
+        while s_flag is False:
+            if user_position.lower() == "CB" or "LB" or "RB" or "CM" or "CAM" or "CDM" or "LW" or "LM" or "RW" or "RM" or "ST":
+                print(f"Ok, you believe that your designated position is {user_position}")
+                s_flag = True
+            user_input = athletic_options()
 
 # First Tab (Survey)
 
