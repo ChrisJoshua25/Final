@@ -4,7 +4,7 @@ from management import Management
 
 management_archive = []
 management = m.Management("", "", "", "")
-import user
+#import user
 # import tkinter as tk
 #
 # window = tk.Tk()
@@ -45,9 +45,11 @@ while user_input.lower() != "stop":
                 user_age = int(input("How old are you? "))
                 if user_age >= 7:
                     print("Ok, this is one of the best times to start playing this sport!")
+                    management_archive.append(management)
                 elif user_age < 6:
                     print("You are very young to be using this app! Assuming your parents are controlling this account, you\n"
                         "will still be able to use the app features.")
+                    management_archive.append(management)
                 else:
                     print("You are starting this sports journey pretty late. However, here we do not give up in our clients!\n"
                         "We will make you become one of the best at this sport!")
@@ -92,6 +94,21 @@ while user_input.lower() != "stop":
                 print(f"Ok, you believe that your designated position is {user_position}")
                 s_flag = True
             user_input = athletic_options()
+
+    elif user_input.lower() == "skills":
+        user_skill = input("You have entered the SKILLS section of the application! Here we provide you with videos where\n "
+                           "you can learn different skills. Would you like to proceed? (yes or no):\n")
+        s_flag = False
+        while s_flag is False:
+            if user_skill.lower() == "yes":
+                print("Trivela: (INSERT LINK)\n"
+                      "Scissors: (INSERT LINK)\n"
+                      "Body Feint: (INSERT LINK)\n"
+                      "Step-Over: (INSERT LINK)\n")
+                s_flag = True
+            elif user_skill.lower() == "no":
+                s_flag = True
+                user_input = athletic_options()
 
 # First Tab (Survey)
 
