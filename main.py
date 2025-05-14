@@ -3,7 +3,7 @@ import management as m
 from management import Management
 
 management_archive = []
-management = m.Management("", "", "", "")
+management = m.Management("18", "", "", "", "")
 #import user
 # import tkinter as tk
 #
@@ -53,18 +53,26 @@ while user_input.lower() != "stop":
                 else:
                     print("You are starting this sports journey pretty late. However, here we do not give up in our clients!\n"
                         "We will make you become one of the best at this sport!")
+                management.set_age(user_age)
 
                 user_height = int(input("How tall are you (in inches)?\n"))
                 if user_height >= 60 or user_height <= 61:
                     print("Ok, thank you")
                     s_flag = True
-
+                management.set_height(user_height)
                 user_athletic = int(input("From a scale of 1-10, what would you rate your athletic ability?\n"))
                 if user_athletic <= 5:
                     print("You shouldn't rate yourself so low!... but thank you for your honesty.")
                 elif user_athletic > 5:
                     print("Ok, you seem to be decent in your sport, let's see if we can make you better!")
-                s_flag = True
+                    s_flag = True
+                management.set_athletic_ability(user_athletic)
+
+                user_weight = int(input(" How much do you weigh? (In lbs)\n"))
+                if user_weight <= 1:
+                    print("Ok, thank you!")
+                    s_flag = True
+                management.set_weight(user_weight)
                 print(management)
             user_input = athletic_options()
 
