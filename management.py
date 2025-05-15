@@ -11,8 +11,8 @@ class Management:
 
 
     def __str__(self):
-        return (f"Personal_Info:\nAge- {self.age}\nHeight- {self.height}\nAthletic_Ability- {self.athletic_ability}\n"
-                f"Weight- {self.weight}")
+        return (f"Personal_Info:\nAge- {self.age} years old\nHeight- {self.height} inches tall\nAthletic_Ability- {self.athletic_ability}/10\n"
+                f"Weight- {self.weight}lbs\nPosition We Recommend- {self.recommended_position}")
 
     def set_position(self, age, height, athletic_ability, weight):
         if self.age and self.height and self.athletic_ability and self.weight:
