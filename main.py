@@ -2,6 +2,10 @@ import management as m
 
 from management import Management
 
+import random
+words = ["LW", "LM", "ST", "CF", "RW", "RM", "CM", "CDM", "CAM", "LB", "LWB", "CB", "RWB", "RB"]
+user_choice = random.choice(words)
+
 management_archive = []
 management = m.Management("", "", "", "", "")
 #import user
@@ -77,8 +81,17 @@ while user_input.lower() != "stop":
                 management.set_weight(user_weight)
                 print(management)
 #THIS SHOULD PROVIDE A RANDOM POSITION
-                user_position = ("We used the information you have given us to determine the best position for you!")
-                management.set_recommended_position(m.recommended_position)
+                user_position = input("We used the information you have given us to determine the best position for you!\n"
+                                      "Would you like it to be shown? (yes or no):\n")
+                if user_position == "yes":
+                    print("Great!")
+                    user_choice = random.choice(words)
+                    s_flag = True
+                elif user_position == "no":
+                    print("The question was honestly a courtesy, I'm adding it regardless. :)")
+                    user_choice = random.choice(words)
+                    s_flag = True
+                management.set_position(user_choice)
                 print(management)
                 user_input = athletic_options()
 
@@ -105,9 +118,13 @@ while user_input.lower() != "stop":
         user_position = input("Please tell us the position you would like to play! (PLEASE USE THE ABBREVIATION FOR THE POSITION):\n")
         s_flag = False
         while s_flag is False:
-            if user_position.lower() == "CB" or "LB" or "RB" or "CM" or "CAM" or "CDM" or "LW" or "LM" or "RW" or "RM" or "ST":
-                print(f"Ok, you believe that your designated position is {user_position}")
+            if user_position.lower() == ("CB" or "LB" or "LWB" or "RWB" or "RB" or "CM" or "CAM" or "CDM" or "LW" or "LM"
+                    or "RW" or "RM" or "CF" or "ST"):
+                print(f"Ok, you believe that your designated position is {user_position}\n")
+                user_choice = user_position
                 s_flag = True
+                management.set_position(user_choice)
+                print(management)
             user_input = athletic_options()
 #IN ADDITION TO GENERAL, THE USER WILL HAVE ACCESS TO VIDEOS ON HOW TO DO SKILLS THAT CAN BE USED IN A SOCCER GAME
     elif user_input.lower() == "skills":
@@ -123,7 +140,7 @@ while user_input.lower() != "stop":
                 s_flag = True
             elif user_skill.lower() == "no":
                 s_flag = True
-                user_input = athletic_options()
+            user_input = athletic_options()
 
 # First Tab (Survey)
 

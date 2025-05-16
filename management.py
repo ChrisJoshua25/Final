@@ -1,5 +1,4 @@
 
-import random
 class Management:
 
     def __init__ (self, age, height, athletic_ability, weight, recommended_position):
@@ -14,10 +13,10 @@ class Management:
         return (f"Personal_Info:\nAge- {self.age} years old\nHeight- {self.height} inches tall\nAthletic_Ability- {self.athletic_ability}/10\n"
                 f"Weight- {self.weight}lbs\nPosition We Recommend- {self.recommended_position}")
 
-    def set_position(self, age, height, athletic_ability, weight):
-        if self.age and self.height and self.athletic_ability and self.weight:
-            words = ("LW", "LM", "ST", "CF", "RW", "RM", "CM", "CDM", "CAM", "LB", "LWB", "CB", "RWB", "RB")
-            self.recommended_position = random.choice(words)
+    def set_position(self, recommended_position):
+    #     if self.age and self.height and self.athletic_ability and self.weight:
+    #         words = ("LW", "LM", "ST", "CF", "RW", "RM", "CM", "CDM", "CAM", "LB", "LWB", "CB", "RWB", "RB")
+        self.recommended_position = recommended_position
 
 
     def set_age(self, age):
