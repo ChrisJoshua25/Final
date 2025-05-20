@@ -1,7 +1,8 @@
 
 class Management:
 
-    def __init__ (self, age, height, athletic_ability, weight, recommended_position):
+    def __init__ (self, name, age, height, athletic_ability, weight, recommended_position):
+        self.name = name
         self.age = age
         self.height = height
         self.athletic_ability = athletic_ability
@@ -18,6 +19,8 @@ class Management:
     #         words = ("LW", "LM", "ST", "CF", "RW", "RM", "CM", "CDM", "CAM", "LB", "LWB", "CB", "RWB", "RB")
         self.recommended_position = recommended_position
 
+    def set_name(self, name):
+        self.name = name
 
     def set_age(self, age):
         self.age = age

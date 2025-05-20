@@ -7,7 +7,7 @@ words = ["LW", "LM", "ST", "CF", "RW", "RM", "CM", "CDM", "CAM", "LB", "LWB", "C
 user_choice = random.choice(words)
 
 management_archive = []
-management = m.Management("", "", "", "", "")
+management = m.Management("", "", "", "", "", "")
 #import user
 # import tkinter as tk
 #
@@ -47,6 +47,10 @@ while user_input.lower() != "stop":
                 s_flag = True
             if user_info.lower() == "yes":
 #THIS IS THE FIRST QUESTION
+                user_name = input("What is your name? ")
+                print("Ok, welcome " + user_name)
+                management_archive.append(management)
+                management.set_name(user_name)
                 user_age = int(input("How old are you? "))
                 if user_age >= 7:
                     print("Ok, this is one of the best times to start playing this sport!")
@@ -93,7 +97,7 @@ while user_input.lower() != "stop":
                     s_flag = True
                 management.set_position(user_choice)
                 print(management)
-                user_input = athletic_options()
+
 
 #HERE, THE USER WILL HAVE ACCESS TO VIDEOS ABOUT GENERAL THINGS A SOCCER PLAYER MUST KNOW HOW TO DO
     elif user_input.lower() == "general":
@@ -103,29 +107,31 @@ while user_input.lower() != "stop":
         s_flag = False
         while s_flag is False:
             if user_general.lower() == "yes":
-                print("Dribbling: (INSERT THE LINK)\n"
-                        "Defending: (INSERT THE LINK)\n"
-                        "Shooting: (INSERT THE LINK)\n"
-                        "Passing: (INSERT THE LINK)\n"
-                        "Speed: (INSERT THE LINK)\n")
+                print("Dribbling: (https://youtu.be/jwIHc9rz7yo?si=TkoaKbqZPPzpOTRO)\n"
+                        "Defending: (https://youtu.be/5DkFpmCrCWY?si=GfPJEyKjQ8OnFXZU)\n"
+                        "Shooting: (https://youtu.be/tcoRi1OxFmo?si=TTwPcaxQhEedExr_)\n"
+                        "Passing: (https://youtu.be/xvaD2AamMpU?si=YIjtKo6irkpWgtA5)\n"
+                        "Speed: (https://youtu.be/1enUeG0i3Gw?si=23NEhNXY1_kj2AAi)\n"
+                      "All of these will show you different techniques where you will be able to improve in your skill.")
                 s_flag = True
             elif user_general.lower() == "no":
                 s_flag = True
-            user_input = athletic_options()
+
 
 #HERE THE PERSON WILL CHOOSE WHAT THEY BELIEVE IS THE BEST POSITION FOR THEMSELVES
     elif user_input.lower() == "position":
-        user_position = input("Please tell us the position you would like to play! (PLEASE USE THE ABBREVIATION FOR THE POSITION):\n")
+        positions = ["CB", "LB", "LWB", "RWB", "RB", "CM", "CAM", "CDM", "LW", "LM"
+                    , "RW", "RM", "CF","ST"]
+        user_choice = input("Please tell us the position you would like to play! (PLEASE USE THE ABBREVIATION FOR THE POSITION):\n")
         s_flag = False
         while s_flag is False:
-            if user_position.lower() == ("CB" or "LB" or "LWB" or "RWB" or "RB" or "CM" or "CAM" or "CDM" or "LW" or "LM"
-                    or "RW" or "RM" or "CF" or "ST"):
-                print(f"Ok, you believe that your designated position is {user_position}\n")
-                user_choice = user_position
+            if user_choice.upper() in positions:
+                print(f"Ok, you believe that your designated position is {user_choice}\n")
+                #user_choice  user_position
                 s_flag = True
                 management.set_position(user_choice)
                 print(management)
-            user_input = athletic_options()
+
 #IN ADDITION TO GENERAL, THE USER WILL HAVE ACCESS TO VIDEOS ON HOW TO DO SKILLS THAT CAN BE USED IN A SOCCER GAME
     elif user_input.lower() == "skills":
         user_skill = input("You have entered the SKILLS section of the application! Here we provide you with videos where\n "
@@ -133,14 +139,17 @@ while user_input.lower() != "stop":
         s_flag = False
         while s_flag is False:
             if user_skill.lower() == "yes":
-                print("Trivela: (INSERT LINK)\n"
-                      "Scissors: (INSERT LINK)\n"
-                      "Body Feint: (INSERT LINK)\n"
-                      "Step-Over: (INSERT LINK)\n")
+                print("Trivela: (https://youtu.be/bR3HZbvSMwY?si=x7sfWPsSIqlsFueP)\n"
+                      "Scissors: (https://youtu.be/YtbwfWxcfT4?si=-ubvcwq7cyaR2w7Z)\n"
+                      "Body Feint: (https://youtu.be/OX4WUr3TCfA?si=HHevNCCQ1JbyHygp)\n"
+                      "Step-Over: (https://youtu.be/b7P5MBS6yhc?si=exr_9Gf6KE5UrqVf)\n")
                 s_flag = True
             elif user_skill.lower() == "no":
                 s_flag = True
-            user_input = athletic_options()
+
+    else:
+        print("Not an option!")
+    user_input = athletic_options()
 
 # First Tab (Survey)
 
