@@ -122,7 +122,8 @@ while user_input.lower() != "stop":
     elif user_input.lower() == "position":
         positions = ["CB", "LB", "LWB", "RWB", "RB", "CM", "CAM", "CDM", "LW", "LM"
                     , "RW", "RM", "CF","ST"]
-        user_choice = input("Please tell us the position you would like to play! (PLEASE USE THE ABBREVIATION FOR THE POSITION):\n")
+        user_choice = input("Please tell us the position you would like to play! (PLEASE USE THE ABBREVIATION FOR THE POSITION)\n"
+                            "(CB, LB, LWB, RWB, RB, CM, CAM, CDM, LW, LM, RW, RM, CF, ST):\n")
         s_flag = False
         while s_flag is False:
             if user_choice.upper() in positions:
@@ -150,42 +151,3 @@ while user_input.lower() != "stop":
     else:
         print("Not an option!")
     user_input = athletic_options()
-
-# First Tab (Survey)
-
-# entry_cats = ['First Name: ', 'Last Name: ']
-#
-# entry_frame = tk.Frame(
-#     relief=tk.SUNKEN, borderwidth=3
-# )
-# entry_frame.pack(padx=5, pady=5)
-#
-# button_frame = tk.Frame(
-# )
-# button_frame.pack(fill=tk.X, ipadx=5, ipady=5)
-#
-# for i, text in enumerate(entry_cats):
-#     label = tk.Label(master=entry_frame, text=text)
-#     entry = tk.Entry(master=entry_frame, width=75)
-#
-#     label.grid(row=i, column=0, sticky="e")
-#     entry.grid(row=i, column=1)
-#
-# submit_button = tk.Button(
-#     master=button_frame,
-#     text="Submit",
-#     width=10,
-#     height=2
-# )
-# submit_button.pack(side=tk.RIGHT, padx=10, pady=10)
-# clear_button = tk.Button(
-#     master=button_frame,
-#     text="Clear",
-#     width=10,
-#     height=2
-# )
-# clear_button.pack(side=tk.RIGHT, padx=10, pady=10)
-#
-#
-#
-# window.mainloop()
